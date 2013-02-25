@@ -53,7 +53,6 @@ Vagrant::Config.run do |config|
       memory = node[:memory] ? node[:memory] : 256;
       node_config.vm.customize [
         'modifyvm', :id,
-        '--name', node[:hostname],
         '--memory', memory.to_s
       ]
 
