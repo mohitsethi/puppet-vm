@@ -25,7 +25,7 @@ Vagrant::Config.run do |config|
       #node_config.vm.network :hostonly, node[:ip]
 
       node[:fwd_port].each_pair do |guest_port, host_port|
-        node_config.vm.forward_port guest_port, host_port 
+        node_config.vm.forward_port guest_port, host_port, :auto => true
       end
 
       memory = node[:memory] ? node[:memory] : 256;
