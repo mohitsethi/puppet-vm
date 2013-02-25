@@ -5,25 +5,13 @@ domain = 'example.dev'
 
 nodes = [
   { 
-    :hostname => 'puppetmaster',
-    :box => 'precise64',
-    :box_url => "http://files.vagrantup.com/precise64.box",
-    :fwd_port => {
-      22 => 9022,
-      8140 => 8140
-    },
-    :memory => 512,
-    :ip => '33.33.33.10'
-  },
-  { 
     :hostname => 'client1',
     :box => 'precise64',
     :box_url => "http://files.vagrantup.com/precise64.box",
     :fwd_port => {
-      22 => 9122,
-      8140 => 8140
+      22 => 9122
     },
-    :memory => 512,
+    :memory => 128,
     :ip => '33.33.33.11'
   },
   { 
@@ -31,12 +19,22 @@ nodes = [
     :box => 'precise64',
     :box_url => "http://files.vagrantup.com/precise64.box",
     :fwd_port => {
-      22 => 9222,
-      8140 => 8140
+      22 => 9222
     },
-    :memory => 512,
+    :memory => 128,
     :ip => '33.33.33.12'
   },
+  { 
+    :hostname => 'puppet',
+    :box => 'precise64',
+    :box_url => "http://files.vagrantup.com/precise64.box",
+    :fwd_port => {
+      22 => 9022,
+      8140 => 8140
+    },
+    :memory => 256,
+    :ip => '33.33.33.10'
+  }
 ]
 
 Vagrant::Config.run do |config|
