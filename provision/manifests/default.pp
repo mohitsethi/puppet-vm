@@ -7,8 +7,6 @@ stage { 'pre': before    => Stage['main'] }
 class { 'mirrors': stage => 'pre' }
 class { 'vagrant': stage => 'pre' }
 
-class { 'proxy': }
-
 class { 'puppet': }
 class { 'networking': }
 
