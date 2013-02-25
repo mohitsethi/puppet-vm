@@ -30,7 +30,8 @@ nodes = [
     :box_url => "http://files.vagrantup.com/precise64.box",
     :fwd_port => {
       22 => 9022,
-      8140 => 8140
+      8140 => 8140,
+      3000 => 3000
     },
     :memory => 256,
     :ip => '33.33.33.10'
