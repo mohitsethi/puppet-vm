@@ -12,7 +12,8 @@ nodes = [
       22 => 9022,
       8140 => 8140
     },
-    :memory => 512
+    :memory => 512,
+    :ip => 33.33.33.10
   },
   { 
     :hostname => 'client1',
@@ -22,7 +23,8 @@ nodes = [
       22 => 9122,
       8140 => 8140
     },
-    :memory => 512
+    :memory => 512,
+    :ip => 33.33.33.11
   },
   { 
     :hostname => 'client2',
@@ -32,7 +34,8 @@ nodes = [
       22 => 9222,
       8140 => 8140
     },
-    :memory => 512
+    :memory => 512,
+    :ip => 33.33.33.12
   },
 ]
 
@@ -42,7 +45,7 @@ Vagrant::Config.run do |config|
       node_config.vm.box = node[:box]
       node_config.vm.box_url = node[:box_url]
       node_config.vm.host_name = node[:hostname] + '.' + domain
-      #node_config.vm.network :hostonly, node[:ip]
+      node_config.vm.network :hostonly, node[:ip]
 
       node[:fwd_port].each_pair do |guest_port, host_port|
         node_config.vm.forward_port guest_port, host_port, :auto => true
