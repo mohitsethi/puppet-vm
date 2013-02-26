@@ -50,7 +50,7 @@ Vagrant::Config.run do |config|
         node_config.vm.forward_port guest_port, host_port, :auto => true
       end
 
-      memory = node[:memory] ? node[:memory] : 256;
+      memory = node[:memory] || 256;
       node_config.vm.customize [
         'modifyvm', :id,
         '--memory', memory.to_s
