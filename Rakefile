@@ -38,5 +38,5 @@ end
 desc "Destroys the environment"
 task :destroy do
   environment = Vagrant::Environment.new(:ui_class => Vagrant::UI::Colored, :cwd => Base.project_root)
-  environment.cli('destroy')
+  environment.cli('destroy', '-f')
 end
